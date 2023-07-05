@@ -21,6 +21,6 @@ jobs:
         name: Extract some files
           unzip osm.zip 
 
-      - uses: diamondburned/action-upload-release@main
+      - uses: diamondburned/action-upload-release@v0.0.1
         with:
           files: osm.apk
