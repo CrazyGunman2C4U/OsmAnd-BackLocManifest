@@ -71,5 +71,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: osm
-        path: android/OsmAnd/build/outputs/apk/*/*/*.apk
+        path: osm.apk
         retention-days: 90
