@@ -1,0 +1,37 @@
+name: 'Repo Lockdown'
+
+on:
+  issues:
+    types: opened
+  pull_request_target:
+    types: opened
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dessant/repo-lockdown@v3
+        with:
+          github-token: ${{ github.token }}
+          exclude-issue-created-before: ''
+          exclude-issue-labels: ''
+          issue-labels: 'invalid'
+          issue-comment: 'This repository does not accept bug reports!'
+          skip-closed-issue-comment: true
+          close-issue: true
+          lock-issue: true
+          issue-lock-reason: 'off-topic'
+          exclude-pr-created-before: ''
+          exclude-pr-labels: ''
+          pr-labels: 'invalid'
+          pr-comment: 'This repository does not accept pull requests!'
+          skip-closed-pr-comment: true
+          close-pr: true
+          lock-pr: true
+          pr-lock-reason: 'off-topic'
+          process-only: ''
+          log-output: false
