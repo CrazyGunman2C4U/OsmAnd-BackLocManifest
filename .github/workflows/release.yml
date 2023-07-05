@@ -1,8 +1,9 @@
 name: Build and upload release
 
 on:
-  release:
-    types: [published]
+  schedule:
+    - cron: '48 18 * * 4'
+  workflow_dispatch:
 
 jobs:
   build:
