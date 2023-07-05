@@ -1,7 +1,8 @@
-name: Build debug apk
+name: Build Full OsmAnd~ version; could be used for F-Droid builds. Doesn't use GooglePlay services.
 
 on:
-  [workflow_dispatch]
+  schedule:
+    - cron: '48 18 * * 4'
 
 permissions:
   contents: read
@@ -59,15 +60,15 @@ jobs:
     - name: Patch memory requirements
       working-directory: ./android
       run: printf "\norg.gradle.jvmargs=-Xmx2048m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8\n" >> gradle.properties
-    - name: Build with Gradle
+    - name: Build with Gradle https://osmand.net/docs/technical/build-osmand/how-to-compile-the-android-version
       working-directory: ./android
-      run: ./gradlew assembleNightlyFreeLegacyFatDebug
+      run: ./gradlew assembleandroidFullLegacyArm64Release
     - name: Rename APK
       working-directory: ./android
-      run: mv OsmAnd/build/outputs/apk/nightlyFreeLegacyFat/debug/OsmAnd-nightlyFree-legacy-fat-debug.apk OsmAnd/build/outputs/apk/nightlyFreeLegacyFat/debug/OsmAnd-nightlyFree-legacy-fat-debug-$(git log -n 1 --format='%h').apk
+      run: mv OsmAnd/build/outputs/apk/androidFullLegacyArm64/release/OsmAnd-androidFull-legacy-arm64-release.apk OsmAnd/build/outputs/apk/androidFullLegacyArm64/release/OsmAnd-androidFull-legacy-arm64-release-$(git log -n 1 --format='%h').apk
     - name: Archive APK
       uses: actions/upload-artifact@v3
       with:
-        name: debug-apk
+        name: osm
         path: android/OsmAnd/build/outputs/apk/*/*/*.apk
         retention-days: 90
