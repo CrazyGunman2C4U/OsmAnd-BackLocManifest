@@ -1,4 +1,4 @@
-name: Build Full OsmAnd~ version; could be used for F-Droid builds. Doesn't use GooglePlay services.
+name: Build Full OsmAnd~ version (Runs at 18:48 on Thursday)
 
 on:
   schedule:
