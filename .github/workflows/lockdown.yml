@@ -20,7 +20,7 @@ jobs:
           exclude-issue-created-before: ''
           exclude-issue-labels: ''
           issue-labels: 'invalid'
-          issue-comment: 'This repository does not accept bug reports!'
+          issue-comment: 'This fork does not accept bug reports!'
           skip-closed-issue-comment: true
           close-issue: true
           lock-issue: true
@@ -28,7 +28,7 @@ jobs:
           exclude-pr-created-before: ''
           exclude-pr-labels: ''
           pr-labels: 'invalid'
-          pr-comment: 'This repository does not accept pull requests!'
+          pr-comment: 'This fork does not accept pull requests!'
           skip-closed-pr-comment: true
           close-pr: true
           lock-pr: true
