@@ -65,7 +65,7 @@ jobs:
       run: ./gradlew assembleandroidFullLegacyArm64Release
     - name: Rename APK
       working-directory: ./android
-      run: mv OsmAnd/build/outputs/apk/androidFullLegacyArm64/release/OsmAnd-androidFull-legacy-arm64-release.apk OsmAnd/build/outputs/apk/androidFullLegacyArm64/release/OsmAnd-androidFull-legacy-arm64-release-$(git log -n 1 --format='%h').apk
+      run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullLegacyArm64/release/OsmAnd-androidFull-legacy-arm64-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/osm.apk
     - name: Archive APK
       uses: actions/upload-artifact@v3
       with:
