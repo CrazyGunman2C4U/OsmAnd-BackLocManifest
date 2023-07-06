@@ -5,6 +5,10 @@ on:
     - cron: '40 18 * * 4'
   workflow_dispatch:
 
+permissions:
+  actions: write
+  contents: write
+
 jobs:
   sync:
 
