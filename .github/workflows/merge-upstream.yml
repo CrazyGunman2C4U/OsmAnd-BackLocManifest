@@ -18,4 +18,4 @@ jobs:
         with:
           upstream: osmandapp/OsmAnd      # set the upstream repo
           upstream-branch: master   # set the upstream branch to merge from
-          branch: upstream          # set the branch to merge to
+          branch: master          # set the branch to merge to
