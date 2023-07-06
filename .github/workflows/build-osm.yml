@@ -1,8 +1,7 @@
-name: Build Full OsmAnd~ version (Runs at 18:48 on Thursday)
-
+name: Build Full OsmAnd~ version
 on:
   schedule:
-    - cron: '48 18 * * 4'
+    - cron: '50 18 * * 4'
   workflow_dispatch:
 
 permissions:
