@@ -72,7 +72,7 @@ jobs:
     - name: Upload Release
       uses: andelf/nightly-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_FSYNC }}
       with:
         tag_name: auto-release
         name: 'OsmAnd~ Background Location Fix Fork Release $$'
