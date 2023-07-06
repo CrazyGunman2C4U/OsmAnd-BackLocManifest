@@ -61,12 +61,12 @@ jobs:
     - name: Patch memory requirements
       working-directory: ./android
       run: printf "\norg.gradle.jvmargs=-Xmx2048m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8\n" >> gradle.properties
-    - name: Build with Gradle https://osmand.net/docs/technical/build-osmand/how-to-compile-the-android-version
+    - name: Build with Gradle
       working-directory: ./android
       run: ./gradlew assembleandroidFullLegacyArm64Release
     - name: Rename APK
       working-directory: ./android
-      run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullLegacyArm64/release/OsmAnd-androidFull-legacy-arm64-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/osm.apk
+      run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullLegacyArm64/release/OsmAnd-androidFull-legacy-arm64-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/src/osm.apk
     - name: Upload Release
       uses: andelf/nightly-release@v1
       env:
@@ -77,4 +77,4 @@ jobs:
         prerelease: false
         body: 'Check https://osmand.net/blog for news.'
         files: |
-          ./osm.apk
+          ./*.apk
