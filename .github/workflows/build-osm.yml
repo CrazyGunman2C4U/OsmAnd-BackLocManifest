@@ -64,6 +64,9 @@ jobs:
     - name: Build with Gradle
       working-directory: ./android
       run: ./gradlew assembleandroidFullLegacyArm64Release
+    - name: Make output dir
+      working-directory: ./
+      run: mkdir src
     - name: Rename APK
       working-directory: ./android
       run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullLegacyArm64/release/OsmAnd-androidFull-legacy-arm64-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/src/osm.apk
