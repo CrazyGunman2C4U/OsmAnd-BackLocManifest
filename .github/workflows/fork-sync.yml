@@ -11,12 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: tgymnich/fork-sync@v1.3
+      - uses: tgymnich/fork-sync@v1.8
         with:
           owner: CrazyGunman2C4U
           repo: OsmAnd-BackLocManifest
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          personal_token: ${{ github.token }}
+          token: ${{ secrets.PAT_FSYNC }}
           merge_method: merge
           base: master
           head: master
