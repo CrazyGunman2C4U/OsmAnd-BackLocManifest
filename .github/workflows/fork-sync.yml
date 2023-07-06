@@ -13,8 +13,8 @@ jobs:
     steps:
       - uses: tgymnich/fork-sync@v1.8
         with:
-          owner: $current_repo_owner
-          repo: $current_repo_name
+          owner: CrazyGunman2C4U
+          repo: OsmAnd-BackLocManifest
           token: ${{ github.token }}
           base: master
           head: master
