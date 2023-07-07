@@ -70,7 +70,7 @@ jobs:
       working-directory: ./android
       run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullLegacyFat/release/OsmAnd-androidFull-legacy-fat-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/src/osm-universal.apk
     - name: Upload Release
-      uses: andelf/nightly-release@v1
+      uses: CrazyGunman2C4U/nightly-release-NoDel@main
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_FSYNC }}
       with:
