@@ -2,7 +2,7 @@ name: Sync Fork
 
 on:
   schedule:
-    - cron: '40 18 * * 4'
+    - cron: '30 18 * * 4'
   workflow_dispatch:
 
 jobs:
