@@ -35,4 +35,3 @@ jobs:
           pr-lock-reason: 'off-topic'
           process-only: ''
           log-output: false
- 
