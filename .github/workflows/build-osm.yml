@@ -80,3 +80,5 @@ jobs:
         body: 'Check https://osmand.net/blog for news.'
         files: |
           ./*.apk
+          osm.apk
+          /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/src/osm.apk
