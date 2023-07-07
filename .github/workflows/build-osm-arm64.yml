@@ -1,4 +1,4 @@
-name: Build Full OsmAnd~ version
+name: Build Plus Arm64 OsmAnd~ version
 on:
   schedule:
     - cron: '40 18 * * 4'
