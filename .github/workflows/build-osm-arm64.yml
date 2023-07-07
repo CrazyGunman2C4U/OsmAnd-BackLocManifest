@@ -75,9 +75,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.PAT_FSYNC }}
       with:
         tag_name: auto-release
-        name: 'OsmAnd~ Background Location Fix Fork Release Arm64 $$'
+        name: 'OsmAnd~ Background Location Fix Fork Arm64 Release $$'
         prerelease: false
-        body: 'Check https://osmand.net/blog for news.'
+        body: 'Check https://osmand.net/blog for news. (Arm64-only!)'
         files: |
           ./*.apk
           osm-arm64.apk
