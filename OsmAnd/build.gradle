@@ -22,17 +22,17 @@ apply plugin: 'kotlin-android-extensions'
 android {
 	signingConfigs {
 		development {
-			storeFile file("../keystores/debug.keystore")
-			storePassword "android"
-			keyAlias "androiddebugkey"
-			keyPassword "android"
+			storeFile file("../keystores/backnav.keystore")
+			storePassword System.getenv("OSMBACKLOCPERM")
+			keyAlias "osmbacklocperm"
+			keyPassword System.getenv("OSMBACKLOCPERM")
 		}
 
 		publishing {
-			storeFile file("../keystores/debug.keystore")
-			storePassword "android"
-			keyAlias "androiddebugkey"
-			keyPassword "android"
+			storeFile file("../keystores/backnav.keystore")
+			storePassword System.getenv("OSMBACKLOCPERM")
+			keyAlias "osmbacklocperm"
+			keyPassword System.getenv("OSMBACKLOCPERM")
 		}
 	}
 
