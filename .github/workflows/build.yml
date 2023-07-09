@@ -82,14 +82,14 @@ jobs:
       run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullLegacyFat/release/OsmAnd-androidFull-legacy-fat-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/src/osm-universal.apk
       
     - name: Upload Release
-      uses: CrazyGunman2C4U/nightly-release-NoDel@main
+      uses: andelf/nightly-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_FSYNC }}
       with:
         tag_name: auto-release
         name: 'OsmAnd~ Background Location Fix Fork Arm64 Release $$'
         prerelease: false
-        body: 'Check https://osmand.net/blog for news. (Arm64-only!)'
+        body: 'Check https://osmand.net/blog for news! osm-universal.apk should work on most devices.'
         files: |
           ./*.apk
           osm-arm64.apk
