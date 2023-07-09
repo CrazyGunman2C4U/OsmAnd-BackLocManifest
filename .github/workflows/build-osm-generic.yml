@@ -1,7 +1,5 @@
 name:  Build OsmAnd~ Plus version (Universal)
 on:
-  schedule:
-    - cron: '00 19 * * 4'
   workflow_dispatch:
 
 permissions:
