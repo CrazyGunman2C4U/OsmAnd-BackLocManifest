@@ -23,16 +23,16 @@ android {
 	signingConfigs {
 		development {
 			storeFile file("../keystores/backnav.keystore")
-			storePassword System.getenv("OSMBACKLOCPERM")
+			storePassword ${{ secrets.OSMBACKLOCPERM }}
 			keyAlias "osmbacklocperm"
-			keyPassword System.getenv("OSMBACKLOCPERM")
+			keyPassword ${{ secrets.OSMBACKLOCPERM }}
 		}
 
 		publishing {
 			storeFile file("../keystores/backnav.keystore")
-			storePassword System.getenv("OSMBACKLOCPERM")
+			storePassword ${{ secrets.OSMBACKLOCPERM }}
 			keyAlias "osmbacklocperm"
-			keyPassword System.getenv("OSMBACKLOCPERM")
+			keyPassword ${{ secrets.OSMBACKLOCPERM }}
 		}
 	}
 
