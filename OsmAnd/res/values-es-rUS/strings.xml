@@ -675,8 +675,6 @@
     <string name="download_srtm_maps">Curvas de nivel</string>
     <string name="download_regular_maps">Mapa estándar</string>
     <string name="download_roads_only_maps">Mapa sólo vial</string>
-    <string name="rendering_attr_alpineHiking_name">Escala de senderismo alpino</string>
-    <string name="rendering_attr_alpineHiking_description">Dibujar senderos según la escala SAC/CAI.</string>
     <string name="rendering_attr_hikingRoutesOSMC_name">Rutas de senderismo</string>
     <string name="rendering_attr_hikingRoutesOSMC_description">Dibujar senderos según trazas OSMC.</string>
     <string name="rendering_attr_noAdminboundaries_name">Fronteras</string>
@@ -4221,7 +4219,7 @@
 \n</string>
     <string name="duration_moment_ago">hace instantes</string>
     <string name="backup_error_subscription_was_expired_descr">La suscripción a «OsmAnd Pro» ha caducado, renuévala para usar la copia de seguridad. Todavía se pueden restaurar los datos de la nube.</string>
-    <string name="contour_lines_hillshades_slope">Curvas de nivel, sombreados, pendientes</string>
+    <string name="contour_lines_hillshade_slope">Curvas de nivel, sombreados, pendientes</string>
     <string name="logout_from_osmand_cloud">Salir de OsmAnd Cloud</string>
     <string name="logout_from_osmand_cloud_decsr">¿Cerrar la sesión\?
 \nTendrás que volver a iniciar sesión para hacer una copia de seguridad o restaurar los datos.</string>
@@ -5203,8 +5201,6 @@
     <string name="beats_per_minute_short">ppm</string>
     <string name="bicycle_scd_device_name">Dispositivo para «Bicicleta»</string>
     <string name="shared_string_ear_lobe">Lóbulo de la oreja</string>
-    <string name="rendering_value_sacScale_name">Escala SAC</string>
-    <string name="rendering_value_caiScale_name">Escala CAI</string>
     <string name="map_2d_mode_action">Modo 2D</string>
     <string name="map_3d_mode_action">Modo 3D</string>
     <string name="map_3d_mode_hint">Mantén pulsado para cambiar la ubicación del botón.</string>

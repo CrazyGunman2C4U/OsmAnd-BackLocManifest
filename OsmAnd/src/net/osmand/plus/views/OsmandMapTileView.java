@@ -97,6 +97,8 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 	private static final int MAP_REFRESH_MESSAGE = OsmAndConstants.UI_HANDLER_MAP_VIEW + 4;
 	private static final int MAP_FORCE_REFRESH_MESSAGE = OsmAndConstants.UI_HANDLER_MAP_VIEW + 5;
 	private static final int BASE_REFRESH_MESSAGE = OsmAndConstants.UI_HANDLER_MAP_VIEW + 3;
+	private static final int MIN_ZOOM_LIMIT = 1;
+	private static final int MAX_ZOOM_LIMIT = 17;
 
 	private boolean MEASURE_FPS;
 	private final FPSMeasurement main = new FPSMeasurement();
@@ -319,7 +321,7 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 				Zoom zoom = new Zoom(getZoom(), getZoomFloatPart(), getMinZoom(), getMaxZoom());
 				if (zoom.isZoomOutAllowed()) {
 					zoom.zoomOut();
-					getAnimatedDraggingThread().startZooming(zoom.getBaseZoom(), zoom.getZoomFloatPart(), false);
+					getAnimatedDraggingThread().startZooming(zoom.getBaseZoom(), zoom.getZoomFloatPart(), null, false);
 					if (wasMapLinkedBeforeGesture) {
 						application.getMapViewTrackingUtilities().setMapLinkedToLocation(true);
 					}
@@ -1548,10 +1550,10 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 		double clat = bottom / 2 + top / 2;
 		double clon = left / 2 + right / 2;
 		tb.setLatLonCenter(clat, clon);
-		while (tb.getZoom() < 17 && tb.containsLatLon(top, left) && tb.containsLatLon(bottom, right)) {
+		while (tb.getZoom() < MAX_ZOOM_LIMIT && tb.containsLatLon(top, left) && tb.containsLatLon(bottom, right)) {
 			tb.setZoom(tb.getZoom() + 1);
 		}
-		while (tb.getZoom() >= 7 && (!tb.containsLatLon(top, left) || !tb.containsLatLon(bottom, right))) {
+		while (tb.getZoom() >= MIN_ZOOM_LIMIT && (!tb.containsLatLon(top, left) || !tb.containsLatLon(bottom, right))) {
 			tb.setZoom(tb.getZoom() - 1);
 		}
 		if (dy != 0 || dx != 0) {
@@ -1991,14 +1993,13 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 
 					RotatedTileBox tb = getCurrentRotatedTileBox();
 					LatLon latlon = NativeUtilities.getLatLonFromElevatedPixel(mapRenderer, tb, e.getX(), e.getY());
-					if (mapRenderer != null) {
-						PointI start31 = mapRenderer.getTarget();
-						PointI finish31 = NativeUtilities.calculateTarget31(mapRenderer,
-								latlon.getLatitude(), latlon.getLongitude(), false);
+					if (hasMapRenderer()) {
+						getAnimatedDraggingThread().startZooming(zoom.getBaseZoom(), zoom.getZoomFloatPart(), latlon, true);
+					} else {
+						getAnimatedDraggingThread().startMoving(
+								latlon.getLatitude(), latlon.getLongitude(), zoom.getBaseZoom(), zoom.getZoomFloatPart(),
+								true, false, null, null);
 					}
-					getAnimatedDraggingThread().startMoving(
-							latlon.getLatitude(), latlon.getLongitude(), zoom.getBaseZoom(), zoom.getZoomFloatPart(),
-							true, false, null, null);
 				}
 				afterDoubleTap = true;
 				return true;
