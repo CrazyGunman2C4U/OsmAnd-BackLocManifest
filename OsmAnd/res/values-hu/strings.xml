@@ -1717,7 +1717,7 @@
     <string name="techical_articles_item">Technikai cikkek</string>
     <string name="versions_item">Verziók</string>
     <string name="feedback">Visszajelzés</string>
-    <string name="contact_us">Kapcsolat</string>
+    <string name="shared_string_contact">Kapcsolat</string>
     <string name="read_more">Bővebben</string>
     <string name="whats_new">Újdonságok</string>
     <string name="rendering_attr_showProposed_name">Tervezett objektumok</string>
@@ -5353,4 +5353,6 @@
     <string name="map_widget_group_glide_desc">A widgetek a célhoz viszonyított vagy átlagos siklásarányt mutatják az aktuális utazáshoz.</string>
     <string name="glide_ratio_to_target">Siklási arány a célig</string>
     <string name="map_widget_glide_average_desc">Mutatja a beállított intervallum átlagos siklási arányát.</string>
+    <string name="external_sensor_name_property_description">Szenzor neve</string>
+    <string name="wheel_circumference">Kerék kerülete</string>
 </resources>

@@ -1547,7 +1547,7 @@
     <string name="techical_articles_item">مقالات تقنية</string>
     <string name="versions_item">الإصدارات</string>
     <string name="feedback">الأصداء</string>
-    <string name="contact_us">اتصل بنا</string>
+    <string name="shared_string_contact">اتصل بنا</string>
     <string name="poi_context_menu_modify_osm_change">تعديل OSM</string>
     <string name="dashboard_or_drawer_title">لوحة التحكم أو شريط المراقبة</string>
     <string name="only_download_over_wifi">Wi-Fi فقط</string>
@@ -5422,4 +5422,6 @@
     <string name="average_glide_time_interval_desc">حدد الفاصل الزمني لحساب متوسط الانحدار.</string>
     <string name="ltr_or_rtl_combine_via_colon_with_space">%1$s : %2$s</string>
     <string name="average_glide_ratio">متوسط نسبة الانحدار</string>
+    <string name="wheel_circumference">محيط العجلة</string>
+    <string name="external_sensor_name_property_description">اسم المستشعر</string>
 </resources>
