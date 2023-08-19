@@ -78,9 +78,6 @@ jobs:
         OSMBACKLOC_PWD: ${{ secrets.OSMBACKLOCPERM }}
       working-directory: ./android
       run: ./gradlew assembleandroidFullLegacyFatRelease
-    - name: Make output dir
-      working-directory: ./
-      run: mkdir src
     - name: Rename APK
       working-directory: ./android
       run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullLegacyFat/release/OsmAnd-androidFull-legacy-fat-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/src/osm-universal.apk
