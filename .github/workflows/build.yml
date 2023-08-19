@@ -65,22 +65,22 @@ jobs:
       env:
         OSMBACKLOC_PWD: ${{ secrets.OSMBACKLOCPERM }}
       working-directory: ./android
-      run: ./gradlew assembleandroidFullLegacyArm64Release
+      run: ./gradlew assembleandroidFullOpenglArm64Release
     - name: Make output dir
       working-directory: ./
       run: mkdir src
     - name: Rename APK
       working-directory: ./android
-      run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullLegacyArm64/release/OsmAnd-androidFull-legacy-arm64-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/src/osm-arm64.apk
+      run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullOpenglArm64/release/OsmAnd-androidFull-opengl-arm64-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/src/osm-arm64.apk
       
     - name: Build with Gradle (Universal)
       env:
         OSMBACKLOC_PWD: ${{ secrets.OSMBACKLOCPERM }}
       working-directory: ./android
-      run: ./gradlew assembleandroidFullLegacyFatRelease
+      run: ./gradlew assembleandroidFullOpenglFatRelease
     - name: Rename APK
       working-directory: ./android
-      run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullLegacyFat/release/OsmAnd-androidFull-legacy-fat-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/src/osm-universal.apk
+      run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullOpenglFat/release/OsmAnd-androidFull-opengl-fat-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/src/osm-universal.apk
       
     - name: Upload Release
       uses: andelf/nightly-release@v1
