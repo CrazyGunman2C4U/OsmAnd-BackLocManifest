@@ -62,6 +62,8 @@ jobs:
       run: printf "\norg.gradle.jvmargs=-Xmx2048m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8\n" >> gradle.properties
       
     - name: Build with Gradle (Arm64 Only)
+      env:
+        OSMBACKLOC_PWD: ${{ secrets.OSMBACKLOCPERM }}
       working-directory: ./android
       run: ./gradlew assembleandroidFullLegacyArm64Release
     - name: Make output dir
@@ -72,6 +74,8 @@ jobs:
       run: mv /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/android/OsmAnd/build/outputs/apk/androidFullLegacyArm64/release/OsmAnd-androidFull-legacy-arm64-release.apk /home/runner/work/OsmAnd-BackLocManifest/OsmAnd-BackLocManifest/src/osm-arm64.apk
       
     - name: Build with Gradle (Universal)
+      env:
+        OSMBACKLOC_PWD: ${{ secrets.OSMBACKLOCPERM }}
       working-directory: ./android
       run: ./gradlew assembleandroidFullLegacyFatRelease
     - name: Make output dir
